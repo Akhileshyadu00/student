@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    color: #F6F7F8;
 
 }
 
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #FFAC81;
     color: #333;
 }
 
@@ -20,4 +21,66 @@ header {
     text-align: center;
     padding: 2rem;
     color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+
+/* Main-Section */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;  /* Ensures responsiveness */
+    gap: 2rem;
+    padding: 20px;
+    margin: 5rem auto;
+}
+
+/* Form-Section */
+.registration-form {
+    width: 600px;
+    background: #FEC3A6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registration-form input {
+    width: 91%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.registration-form button {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    
+}
+
+.registration-form button:hover {
+    background: #FF674D;
 }
