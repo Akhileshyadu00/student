@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     line-height: 1.6;
-
 }
 
 
@@ -133,7 +132,7 @@ header h1 {
 }
 
 #studentTable tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2;  /* check */
 }
 
 #studentTable tr:hover {
