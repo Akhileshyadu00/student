@@ -1,38 +1,29 @@
 // DOM elements
-
-const studentForm = document.getElementById("studentForm"); //HTML data
-const studentTableBody = document.querySelector("studentTable tbody"); //Data store here
+const studentForm = document.getElementById("studentForm"); // Form element
+const studentTableBody = document.querySelector("#studentTable tbody"); // Table body
 
 let editIndex = -1; // Track index for editing
 
-//store data on local storage
-
+// Store data in local storage
 function saveToLocalStorage(data) {
-    localStorage.setItem("student", JSON.stringify(data)); //data into string
+    localStorage.setItem("students", JSON.stringify(data)); // data into string
 }
 
-//fetch data form local storage 
-
-function getFromLocalStorage(data) {
-    return JSON.parse(localStorage.getItem("student")) || [];
+// Fetch data from local storage
+function getFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("students")) || [];
 }
 
-// adjust scrollbar 
-
+// Adjust scrollbar
 function adjustScroll() {
     const recordsSection = document.querySelector(".table-container");
-    const studentRows = document.querySelectorAll("#studentTable tbody tr");
+    if (!recordsSection) return; // Prevents errors if the element is missing
 
-    if (studentRows.length > 4) { // show scrollbar if more than 4 students
-        recordsSection.style.overflowY = "scroll";
-    } else {
-        recordsSection.style.overflowY = "hidden";
-    }
+    const studentRows = document.querySelectorAll("#studentTable tbody tr");
+    recordsSection.style.overflowY = studentRows.length > 4 ? "scroll" : "hidden";  //min number required for scroll > 4
 }
 
-
-//render student records 
-
+// Render student records
 function renderStudents() {
     const students = getFromLocalStorage();
     studentTableBody.innerHTML = ""; // Clear table before rendering
@@ -45,7 +36,7 @@ function renderStudents() {
             <td>${student.email}</td>
             <td>${student.contact}</td>
             <td>
-                <button  class="edit-btn" onclick="editStudent(${index})">Edit</button>
+                <button class="edit-btn" onclick="editStudent(${index})">Edit</button>
                 <button class="delete-btn" onclick="deleteStudent(${index})">Delete</button>
             </td>
         `;
@@ -116,7 +107,7 @@ studentForm.addEventListener("submit", (e) => {
     }, 200);
 });
 
-// edit a student
+// Edit a student
 function editStudent(index) {
     const students = getFromLocalStorage();
     const student = students[index];
@@ -129,7 +120,7 @@ function editStudent(index) {
     editIndex = index; // Set index for updating
 }
 
-// delete a student
+// Delete a student
 function deleteStudent(index) {
     if (!confirm("Are you sure you want to delete this student?")) return;
 
@@ -141,4 +132,3 @@ function deleteStudent(index) {
 
 // Initial render
 renderStudents();
-

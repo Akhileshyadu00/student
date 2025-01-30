@@ -1,10 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Added for better layout control */
     line-height: 1.6;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -13,9 +12,8 @@ body {
 }
 
 /* Header */
-
 header {
-    background: linear-gradient(to right, #566246, #A4C2A5);
+    background: linear-gradient(to right, #a9ff68,#ff8989 );
     text-align: center;
     padding: 2rem;
     color: white;
@@ -25,23 +23,22 @@ header h1 {
     font-size: 2.5rem;
 }
 
-
-/* Main-Section */
+/* Main Section */
 .main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;  /* Ensures responsiveness */
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
     padding: 20px;
-   
-    background: linear-gradient(to right, #A4C2A5, #D8DAD3);
+    background: linear-gradient(to right, #a9ff68,#ff8989 );
 }
 
-/* Form-Section */
+/* Form Section */
 .registration-form {
     width: 600px;
-    background: #D8DAD3;
+    background: linear-gradient(to bottom, #ffa585,#ffeda0 );
+    margin: 20px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -51,18 +48,18 @@ header h1 {
     margin-bottom: 20px;
     font-size: 1.5rem;
     text-align: center;
-  
+    color: white;
 }
 
 .registration-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #FF674D;
+    color: #D36135;
 }
 
 .registration-form input {
-    width: 91%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -71,30 +68,31 @@ header h1 {
 
 .registration-form button {
     display: block;
-    width: 95%;
+    width: 100%;
     padding: 10px;
-    background: linear-gradient(to right, #566246, #A4C2A5);
+    background: linear-gradient(to right, #ff5858, #ffc8c8);
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    
 }
 
 .registration-form button:hover {
     background: #FF674D;
 }
 
-
 /* Table Section */
 .student-records {
     width: 600px;
-    background: #F1F2EB;
+    background: linear-gradient(to top, #f3f98a,#fcbc98 );
+    color: white;
+    text-align: center;
     padding: 20px;
+    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-height: 500px; /* Increased max height */
+    max-height: 500px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -104,7 +102,7 @@ header h1 {
     max-height: 300px;
     overflow-y: auto;
     overflow-x: auto;
-    border: 1px solid #ddd;
+    border: 1px solid #eeb86d;
     border-radius: 8px;
     padding: 10px;
 }
@@ -117,7 +115,7 @@ header h1 {
 }
 
 #studentTable th {
-    background: linear-gradient(to right, #566246, #A4C2A5);
+    background: linear-gradient(to left, #f9c58d,#fa9372 );
     color: white;
     font-weight: bold;
     border: 1px solid #ddd;
@@ -126,34 +124,36 @@ header h1 {
 }
 
 #studentTable td {
-    border: 1px solid #ddd;
+    color: #333;
+    border: 1px solid #f9c58d;
     padding: 10px;
     text-align: center;
 }
 
-#studentTable tr:nth-child(even) {
-    background-color: #f2f2f2;  /* check */
-}
+
 
 #studentTable tr:hover {
-    background-color: #e6f7ff; 
+    background-color: #ffb88e;
 }
 
 /* Custom Scrollbar */
 .student-records::-webkit-scrollbar,
-.table-container::-webkit-scrollbar {
+.table-container::-webkit-scrollbar,
+#studentTable::-webkit-scrollbar {
     width: 10px;
 }
 
 .student-records::-webkit-scrollbar-thumb,
-.table-container::-webkit-scrollbar-thumb {
-    background: #feb47b;
+.table-container::-webkit-scrollbar-thumb,
+#studentTable::-webkit-scrollbar-thumb {
+    background: #f27a7d;
     border-radius: 4px;
 }
 
 .student-records::-webkit-scrollbar-thumb:hover,
-.table-container::-webkit-scrollbar-thumb:hover {
-    background: #ff7e5f;
+.table-container::-webkit-scrollbar-thumb:hover,
+#studentTable::-webkit-scrollbar-thumb:hover {
+    background: #f36364;
 }
 
 /* Buttons inside the table */
@@ -164,32 +164,32 @@ header h1 {
     font-size: 0.9rem;
     border-radius: 4px;
     margin: 5px;
-    transition: background 0.3s ease-out;
 }
 
 /* Edit Button */
 #studentTable td button:first-child {
-    background: #feb47b;
+    background: #eeb86d;
     color: white;
 }
 
 #studentTable td button:first-child:hover {
-    background: #ffcc80; /* Updated hover color */
+    background: #5cb270;
 }
 
 /* Delete Button */
 #studentTable td button.delete-btn {
-    background: #ff7e5f;
+    background: #eeb86d;
     color: white;
 }
 
 #studentTable td button.delete-btn:hover {
-    background: #c0392b;
+    background: #FF674D;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .registration-form, .student-records {
+    .registration-form,
+    .student-records {
         width: 100%;
         padding: 15px;
     }
@@ -204,5 +204,3 @@ header h1 {
         overflow-x: auto;
     }
 }
-
-
