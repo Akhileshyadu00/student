@@ -3,21 +3,20 @@
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #F6F7F8;
 
 }
 
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFAC81;
+    background-color: #F1F2EB;
     color: #333;
 }
 
 /* Header */
 
 header {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #566246, #A4C2A5);
     text-align: center;
     padding: 2rem;
     color: white;
@@ -36,13 +35,14 @@ header h1 {
     flex-wrap: wrap;  /* Ensures responsiveness */
     gap: 2rem;
     padding: 20px;
-    margin: 5rem auto;
+   
+    background: linear-gradient(to right, #A4C2A5, #D8DAD3);
 }
 
 /* Form-Section */
 .registration-form {
     width: 600px;
-    background: #FEC3A6;
+    background: #D8DAD3;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,12 +52,14 @@ header h1 {
     margin-bottom: 20px;
     font-size: 1.5rem;
     text-align: center;
+  
 }
 
 .registration-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #FF674D;
 }
 
 .registration-form input {
@@ -72,7 +74,7 @@ header h1 {
     display: block;
     width: 95%;
     padding: 10px;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #566246, #A4C2A5);
     color: white;
     border: none;
     border-radius: 4px;
@@ -84,3 +86,124 @@ header h1 {
 .registration-form button:hover {
     background: #FF674D;
 }
+
+
+/* Table Section */
+.student-records {
+    width: 600px;
+    background: #F1F2EB;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 500px; /* Increased max height */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Table Scroll Container */
+.table-container {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Table */
+#studentTable {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+#studentTable th {
+    background: linear-gradient(to right, #566246, #A4C2A5);
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#studentTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#studentTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#studentTable tr:hover {
+    background-color: #e6f7ff; 
+}
+
+/* Custom Scrollbar */
+.student-records::-webkit-scrollbar,
+.table-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.student-records::-webkit-scrollbar-thumb,
+.table-container::-webkit-scrollbar-thumb {
+    background: #feb47b;
+    border-radius: 4px;
+}
+
+.student-records::-webkit-scrollbar-thumb:hover,
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #ff7e5f;
+}
+
+/* Buttons inside the table */
+#studentTable td button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin: 5px;
+    transition: background 0.3s ease-out;
+}
+
+/* Edit Button */
+#studentTable td button:first-child {
+    background: #feb47b;
+    color: white;
+}
+
+#studentTable td button:first-child:hover {
+    background: #ffcc80; /* Updated hover color */
+}
+
+/* Delete Button */
+#studentTable td button.delete-btn {
+    background: #ff7e5f;
+    color: white;
+}
+
+#studentTable td button.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-form, .student-records {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    #studentTable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+
